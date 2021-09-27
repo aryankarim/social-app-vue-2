@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "email": "a2@gmail.com",
+      "password": "$2a$10$N72.T/DyPas2HClyIZIKEePcJCjPjKYVL8iZndWgRuCR7hquDk6Ju",
+      "username": "aryan",
+      "id": 1
+    },
+    {
+      "email": "a3@gmail.com",
+      "password": "$2a$10$IMKmKmnyU.WhTIVLfOQNf.26x.Gxc1Wm9C3k1eezQZ2sxScbItb0i",
+      "username": "lmao",
+      "id": 2
+    },
+    {
+      "email": "aryan@gmail.com",
+      "password": "$2a$10$eB1qNyGmEVP1FgJgs5SD6OJAIrustTi0MAT3FYPS66t/jjuoOTnA.",
+      "username": "aryan",
+      "id": 3
+    },
+    {
+      "email": "a4@gmail.com",
+      "password": "$2a$10$CF2C7NgYdc2W.LOt8uV5l.yaZLRz22Dpc289iFqU.cZGK76vbAdMW",
+      "username": "aryan",
+      "id": 4
+    },
+    {
+      "email": "aryan1@gmail.com",
+      "password": "$2a$10$fjSwV8f4O97OYjSIYx.SQOPGKTUfqX1zJk3V/qK/KUJvrCkM7DFim",
+      "username": "Aryan Majeed",
+      "id": 5
+    },
+    {
+      "email": "aryanmajeed97@outlook.com",
+      "password": "$2a$10$VGukoJNgGDMFMGk5DcTRlO59aUxX42tZJNsTFkloBm79ie9w3DOKC",
+      "username": "Aryan97",
+      "id": 6
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$Fi42ZB8yoly5kqhjdV1bJO4Ct.eB.t52zNiG49oCjy9teshc3lZOe",
+      "username": "aryan",
+      "id": 7
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$85jUBC66j/O9W8YVdtx7O.MBYb87A2dQ1zkHKyORIogL.VoggvM0i",
+      "username": "aryan",
+      "id": 8
+    }
+  ],
+  "posts": [
+    {
+      "text": "Hello World this post contains some good words and sayings",
+      "userId": 6,
+      "username": "Aryan97",
+      "time": "9/14/2021, 6:36:24 PM",
+      "id": 3
+    },
+    {
+      "text": "Lorem epsum Lorem epsum Lorem epsum Lorem epsum Lorem epsum Lorem epsum Lorem epsum Lorem epsum Lorem epsum ",
+      "userId": 1,
+      "username": "aryan",
+      "time": "9/14/2021, 6:37:45 PM",
+      "id": 4
+    },
+    {
+      "text": "This is a post made from another incognito browser ",
+      "userId": 6,
+      "username": "Aryan97",
+      "time": "9/14/2021, 6:40:17 PM",
+      "id": 5
+    },
+    {
+      "text": "lmao",
+      "userId": 7,
+      "username": "aryan",
+      "time": "9/15/2021, 5:47:48 PM",
+      "id": 6
+    }
+  ]
+}
