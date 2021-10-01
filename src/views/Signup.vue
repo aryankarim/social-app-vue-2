@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>{{ $t('shared.signup') }}</h1>
+  <div class="mt-15">
+    <h1 align="center">{{ $t('shared.signup') }}</h1>
     <form @submit.prevent="signup">
       <div>
         <label for="username">{{ $t('shared.username') }}</label>

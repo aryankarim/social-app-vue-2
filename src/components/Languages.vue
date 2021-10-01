@@ -1,11 +1,30 @@
 <template>
-  <div class="dropdown">
-    <div class="dropbtn">{{ $t('languages.languages') }}</div>
-    <div class="dropdown-content">
-      <div @click="changeLanguage('en')">{{ $t('languages.english') }}</div>
-      <div @click="changeLanguage('kr')">{{ $t('languages.kurdish') }}</div>
-      <div @click="changeLanguage('ar')">{{ $t('languages.arabic') }}</div>
-    </div>
+  <div>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn text v-bind="attrs" v-on="on">
+          <v-icon left>mdi-translate</v-icon>
+          {{ $t('languages.languages') }}
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-item>
+          <v-list-item-title @click="changeLanguage('en')">{{
+            $t('languages.english')
+          }}</v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title @click="changeLanguage('kr')"
+            >{{ $t('languages.kurdish') }}
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title @click="changeLanguage('ar')"
+            >{{ $t('languages.arabic') }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
   </div>
 </template>
 
@@ -20,7 +39,7 @@ export default {
 </script>
 
 <style scoped>
-.dropbtn {
+/* .dropbtn {
   background-color: #3677b3;
   color: white;
   padding: 15px;
@@ -59,5 +78,5 @@ export default {
 
 .dropdown:hover .dropbtn {
   background-color: #3b5ab1;
-}
+} */
 </style>

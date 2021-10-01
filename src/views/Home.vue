@@ -1,55 +1,68 @@
 <template>
-  <div>
-    <h1>{{ $t('shared.home') }}</h1>
-    <div class="container">
-      <div class="innerContainer">
-        <div>
-          <h2>{{ $t('home.addPost') }}</h2>
-          <form class="login" @submit.prevent="addPost">
-            <input
-              required
-              v-model="text"
-              type="text"
-              :placeholder="$t('home.writePost')"
-              autocomplete
-            />
-            <div>{{ feedback }}</div>
-            <hr />
-            <input type="submit" :value="$t('home.publishPost')" />
-          </form>
-        </div>
-      </div>
-      <div class="innerContainer">
-        <PostList />
-      </div>
-    </div>
-  </div>
+  <v-container>
+    <v-row>
+      <v-col cols="2">
+        <v-sheet rounded="lg">
+          <v-list color="transparent">
+            <v-list-item v-for="sideBarItem in sideBar" :key="sideBarItem" link>
+              <v-list-item-content @click="changeTab(sideBarItem)">
+                <v-list-item-title> {{ sideBarItem }} </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <div v-if="tab === 'Feed'">
+              <v-divider class="my-2"></v-divider>
+              <v-list-item link color="grey lighten-4" @click="refreshPosts">
+                <v-list-item-content>
+                  <v-list-item-title>
+                    Refresh
+                    <v-icon class="mb-1">mdi-refresh</v-icon>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </div>
+          </v-list>
+        </v-sheet>
+      </v-col>
+
+      <v-col>
+        <v-sheet min-height="70vh" rounded="lg">
+          <PostList v-if="tab === 'Feed'" />
+          <AddPost v-else-if="tab === 'Add Post'" />
+          <div v-else class="pa-16">
+            <v-alert text outlined color="deep-orange" icon="mdi-fire">
+              This page is under development! Content will be added soon!
+            </v-alert>
+          </div>
+        </v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 import PostList from '../components/PostList.vue';
+import AddPost from '../components/AddPost.vue';
+
 export default {
   name: 'Home',
   components: {
     PostList,
+    AddPost,
   },
   data() {
     return {
-      text: '',
-      feedback: '',
+      sideBar: ['Feed', 'Add Post', 'Messeges', 'Setting'],
+      tab: 'Feed',
     };
   },
-  computed: mapGetters(['user']),
   methods: {
-    ...mapActions(['addNewPost', 'fetchPosts']),
-    addPost() {
-      this.addNewPost({
-        text: this.text,
-        userId: this.user.userInfo.id,
-        username: this.user.userInfo.username,
-      });
-      this.text = '';
+    ...mapActions(['fetchPosts']),
+    refreshPosts() {
+      this.fetchPosts();
+    },
+    changeTab(newTab = 'Feed') {
+      this.tab = newTab;
     },
   },
   created() {
@@ -57,79 +70,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.innerContainer {
-  float: left;
-  width: 50%;
-}
-.container:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-* {
-  box-sizing: border-box;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-  position: relative;
-  margin: 15px 15px;
-}
-
-.card .date {
-  position: absolute;
-  bottom: 2px;
-  right: 4px;
-  color: #3677b3;
-}
-.card .username {
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  color: #3677b3;
-}
-@media screen and (max-width: 900px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .innerContainer {
-    width: 100%;
-    display: block;
-    float: none;
-  }
-}
-
-input[type='text'] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type='submit'] {
-  width: 100%;
-  background-color: #3677b3;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type='submit']:hover {
-  background-color: #3b5ab1;
-}
-</style>

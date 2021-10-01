@@ -1,21 +1,22 @@
 <template>
-  <div :class="navBarClass">
-    <router-link to="/">{{ $t('shared.home') }}</router-link>
-    <router-link to="/profile">{{ $t('shared.profile') }}</router-link>
-    <router-link to="/signup">{{ $t('shared.signup') }} </router-link>
-    <router-link
+  <v-app-bar app flat>
+    <v-btn text to="/">
+      {{ $t('shared.home') }}
+    </v-btn>
+    <v-btn text to="/profile">
+      {{ $t('shared.profile') }}
+    </v-btn>
+    <v-spacer></v-spacer>
+    <v-btn
+      text
       @click="logoutUser"
       to="/login"
       :style="[user.loggedIn ? { background: '#ff6060' } : '']"
-      >{{
-        user.loggedIn ? $t('navBar.signout') : $t('shared.signin')
-      }}</router-link
     >
+      {{ user.loggedIn ? $t('navBar.signout') : $t('shared.signin') }}
+    </v-btn>
     <Languages />
-    <div class="icon" @click="barClick">
-      <i class="fa fa-bars fa-2x"></i>
-    </div>
-  </div>
+  </v-app-bar>
 </template>
 
 <script>
@@ -51,6 +52,7 @@ export default {
 .router-link-exact-active {
   background-color: #616161;
 }
+/*
 .topnav {
   background-color: #303030;
   overflow: hidden;
@@ -97,5 +99,5 @@ export default {
     display: block;
     text-align: left;
   }
-}
+} */
 </style>

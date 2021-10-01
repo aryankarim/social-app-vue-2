@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <v-app>
     <Header />
-    <router-view></router-view>
-  </div>
+    <v-main class="grey lighten-3">
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -25,13 +27,3 @@ export default {
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #343435;
-}
-</style>

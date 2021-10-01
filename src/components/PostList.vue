@@ -1,23 +1,22 @@
 <template>
   <div>
-    <div>
-      <h2>
+    <div align="center">
+      <h2 class="pt-6">
         {{ $t('home.todayPosts') }}
-        <i
-          class="fa fa-refresh"
-          style="color:#3677b3"
-          @click="refreshPosts"
-        ></i>
       </h2>
     </div>
-    <div class="card" :key="post.id" v-for="post in posts">
-      <PostItem :post="post" />
-    </div>
+    <v-container>
+      <v-row>
+        <v-col cols="6" :key="post.id" v-for="post in posts">
+          <PostItem :post="post" />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 import PostItem from './PostItem.vue';
 export default {
   name: 'PostList',
@@ -25,12 +24,6 @@ export default {
     PostItem,
   },
   computed: mapGetters(['posts']),
-  methods: {
-    ...mapActions(['fetchPosts']),
-    refreshPosts() {
-      this.fetchPosts();
-    },
-  },
 };
 </script>
 

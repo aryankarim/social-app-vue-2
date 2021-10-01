@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="mt-15">
+    <h1 align="center">{{ $t('shared.signin') }}</h1>
     <form class="login" @submit.prevent="login">
-      <h1>{{ $t('shared.signin') }}</h1>
       <label>{{ $t('shared.email') }}</label>
       <input
         required
@@ -22,6 +22,12 @@
       <hr />
       <input type="submit" :value="$t('shared.signin')" />
     </form>
+    <v-row class="my-4" justify="center">
+      <div justify="center">Don't have an account?</div>
+      <v-btn text to="/signup" color="indigo darken-1" height="22">
+        {{ $t('shared.signup') }}
+      </v-btn>
+    </v-row>
   </div>
 </template>
 
