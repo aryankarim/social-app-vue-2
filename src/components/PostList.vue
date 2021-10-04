@@ -7,9 +7,18 @@
     </div>
     <v-container>
       <v-row>
-        <v-col cols="6" :key="post.id" v-for="post in posts">
+        <v-flex
+          :key="post.id"
+          v-for="post in posts"
+          xs12
+          sm12
+          md6
+          lg6
+          xl6
+          class="pa-6"
+        >
           <PostItem :post="post" />
-        </v-col>
+        </v-flex>
       </v-row>
     </v-container>
   </div>

@@ -1,21 +1,56 @@
 <template>
   <v-app-bar app flat>
-    <v-btn text to="/">
-      {{ $t('shared.home') }}
-    </v-btn>
-    <v-btn text to="/profile">
-      {{ $t('shared.profile') }}
-    </v-btn>
-    <v-spacer></v-spacer>
-    <v-btn
-      text
-      @click="logoutUser"
-      to="/login"
-      :style="[user.loggedIn ? { background: '#ff6060' } : '']"
-    >
-      {{ user.loggedIn ? $t('navBar.signout') : $t('shared.signin') }}
-    </v-btn>
-    <Languages />
+    <v-layout class="hidden-xs-only">
+      <v-btn :ripple="false" to="/" plain>
+        {{ $t('shared.home') }}
+      </v-btn>
+      <v-btn :ripple="false" to="/profile" plain>
+        {{ $t('shared.profile') }}
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn
+        plain
+        @click="logoutUser"
+        :ripple="false"
+        to="/login"
+        :style="[user.loggedIn ? { background: '#ff6060' } : '']"
+      >
+        {{ user.loggedIn ? $t('navBar.signout') : $t('shared.signin') }}
+      </v-btn>
+      <Languages />
+    </v-layout>
+    <div class="hidden-sm-and-up ml-auto">
+      <v-menu min-width="100%">
+        <template v-slot:activator="{ on, attrs }">
+          <v-icon class="mb-1" v-bind="attrs" v-on="on">mdi-menu</v-icon>
+        </template>
+        <v-list align="center" class="hidden-sm-and-up">
+          <v-list-item>
+            <v-btn min-width="100%" :ripple="false" to="/" plain>
+              {{ $t('shared.home') }}
+            </v-btn>
+          </v-list-item>
+          <v-list-item>
+            <v-btn min-width="100%" :ripple="false" to="/profile" plain>
+              {{ $t('shared.profile') }}
+            </v-btn>
+          </v-list-item>
+          <v-list-item>
+            <v-btn
+              min-width="100%"
+              plain
+              @click="logoutUser"
+              :ripple="false"
+              to="/login"
+              :style="[user.loggedIn ? { background: '#ff6060' } : '']"
+            >
+              {{ user.loggedIn ? $t('navBar.signout') : $t('shared.signin') }}
+            </v-btn>
+          </v-list-item>
+          <Languages />
+        </v-list>
+      </v-menu>
+    </div>
   </v-app-bar>
 </template>
 
@@ -27,11 +62,6 @@ export default {
   components: {
     Languages,
   },
-  data() {
-    return {
-      navBarClass: 'topnav',
-    };
-  },
   computed: mapGetters(['user']),
   methods: {
     ...mapActions(['logout']),
@@ -39,10 +69,6 @@ export default {
       if (this.user.loggedIn) {
         this.logout();
       }
-    },
-    barClick() {
-      this.navBarClass =
-        this.navBarClass === 'topnav' ? 'topnav responsive' : 'topnav';
     },
   },
 };
@@ -52,52 +78,4 @@ export default {
 .router-link-exact-active {
   background-color: #616161;
 }
-/*
-.topnav {
-  background-color: #303030;
-  overflow: hidden;
-}
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-.topnav a.active {
-  background-color: #04aa6d;
-  color: white;
-}
-.icon {
-  display: none;
-}
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav .icon {
-    float: right;
-    display: block;
-    color: white;
-    margin: 8px 10px 0 0;
-  }
-  .topnav.responsive {
-    position: relative;
-  }
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-} */
 </style>

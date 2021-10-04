@@ -47,6 +47,12 @@
       "password": "$2a$10$85jUBC66j/O9W8YVdtx7O.MBYb87A2dQ1zkHKyORIogL.VoggvM0i",
       "username": "aryan",
       "id": 8
+    },
+    {
+      "email": "a10@gamil.com",
+      "password": "$2a$10$i9l5ky0EnrDeLskhcBPNseqB6vEYnlhMjyJVKEt/IrOe8fAKGJO8C",
+      "username": "User1234",
+      "id": 9
     }
   ],
   "posts": [
@@ -72,20 +78,6 @@
       "id": 5
     },
     {
-      "text": "lmao",
-      "userId": 7,
-      "username": "aryan",
-      "time": "9/15/2021, 5:47:48 PM",
-      "id": 6
-    },
-    {
-      "text": "ggd",
-      "userId": 1,
-      "username": "aryan",
-      "time": "9/30/2021, 5:22:37 PM",
-      "id": 7
-    },
-    {
       "text": "123452349134567h8hhhhhhhh88888888888912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678912345678",
       "userId": 8,
       "username": "aryan",
@@ -100,13 +92,6 @@
       "id": 9
     },
     {
-      "text": "jjjjj",
-      "userId": 8,
-      "username": "aryan",
-      "time": "10/1/2021, 4:47:06 PM",
-      "id": 10
-    },
-    {
       "text": "this is a new post",
       "userId": 1,
       "username": "aryan",
@@ -119,6 +104,27 @@
       "username": "aryan",
       "time": "10/1/2021, 6:05:36 PM",
       "id": 12
+    },
+    {
+      "text": "this is one of the newest post ",
+      "userId": 8,
+      "username": "aryan",
+      "time": "10/1/2021, 10:04:13 PM",
+      "id": 13
+    },
+    {
+      "text": "This is a post. This post has more words than usual. And be careful the char limit for these posts are 150 chars.",
+      "userId": 8,
+      "username": "aryan",
+      "time": "10/1/2021, 10:15:36 PM",
+      "id": 14
+    },
+    {
+      "text": "Today is so late its almost morning. Today is so late its almost morning",
+      "userId": 1,
+      "username": "aryan",
+      "time": "10/2/2021, 2:53:46 AM",
+      "id": 15
     }
   ],
   "avatarImages": [

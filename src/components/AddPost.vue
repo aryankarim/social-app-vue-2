@@ -47,8 +47,11 @@ export default {
   methods: {
     ...mapActions(['addNewPost']),
     addPost() {
-      if (this.text.length > 150) {
-        this.showFeedback('Text is too long!', 'error');
+      if (this.text.length > 150 || this.text.length === 0) {
+        this.showFeedback(
+          'Text cannot be empty or more than 150 characters!',
+          'error'
+        );
         return;
       }
       this.addNewPost({
@@ -58,6 +61,7 @@ export default {
       });
       this.text = '';
       this.showFeedback('New post has been published!', 'success');
+      this.$emit('refreshPosts');
     },
     showFeedback(message, type) {
       this.feedbackMessage = message;

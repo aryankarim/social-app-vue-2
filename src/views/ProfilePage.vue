@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <v-card elevation="8" max-width="400" class="my-15 rounded-lg" align="left">
+    <v-card elevation="8" max-width="460" class="my-15 rounded-lg" align="left">
       <v-card-title>{{ $t('shared.profile') }}</v-card-title>
       <v-row class="mx-4 py-8">
         <v-col>
