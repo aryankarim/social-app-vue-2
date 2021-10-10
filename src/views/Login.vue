@@ -23,7 +23,7 @@
       <input type="submit" :value="$t('shared.signin')" />
     </form>
     <v-row class="my-4" justify="center">
-      <div justify="center">Don't have an account?</div>
+      <div justify="center">{{ $t('login.haveAccount') }}</div>
       <v-btn text to="/signup" color="indigo darken-1" height="22">
         {{ $t('shared.signup') }}
       </v-btn>

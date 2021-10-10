@@ -2,7 +2,7 @@
   <v-form @submit.prevent="addPost" align="right">
     <v-text-field
       class="pa-16 pb-0"
-      label="New Post"
+      :label="$t('home.addPost')"
       v-model="text"
       :placeholder="$t('home.writePost')"
       outlined
@@ -19,7 +19,7 @@
       color="blue darken-1"
       class="ma-4 mr-16 white--text"
     >
-      Upload
+      {{ $t('home.publishPost') }}
       <v-icon right dark>
         mdi-send
       </v-icon>

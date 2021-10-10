@@ -6,10 +6,18 @@
     "personalInfo": "Personal Info"
   },
   "home": {
-    "addPost": "Add Posts",
+    "addPost": "Add Post",
     "writePost": "Write what is on your mind ...",
     "publishPost": "Publish Post",
-    "todayPosts": "Today's Posts"
+    "todayPosts": "Today's Posts",
+    "refresh": "Refresh",
+    "underDevelopment": "This page is under development! Content will be added soon!",
+    "tabs": {
+      "feed": "Feed",
+      "addPost": "Add Post",
+      "messages": "Messages",
+      "setting": "Setting"
+    }
   },
   "shared": {
     "profile": "Profile",
@@ -19,6 +27,9 @@
     "username": "Username",
     "email": "Email",
     "password": "Password"
+  },
+  "login": {
+    "haveAccount": "Don't have an account?"
   },
   "languages": {
     "languages": "languages",

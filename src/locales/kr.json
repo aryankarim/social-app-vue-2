@@ -7,9 +7,17 @@
   },
   "home": {
     "addPost": "زیادکردنی پۆست",
-    "writePost": "بنووسە چی لە مێشکتدایە ...",
+    "writePost": "...بنووسە چی لە مێشکتدایە",
     "publishPost": "بلاوکردنەوەی پۆست",
-    "todayPosts": "پۆستەکانی ئەمرۆ"
+    "todayPosts": "پۆستەکانی ئەمرۆ",
+    "refresh": "تازەکردنەوە",
+    "underDevelopment": "!ئەم پەیجە لەژێر گەشەپێداندایە",
+    "tabs": {
+      "feed": "پۆستەکانی ئەمرۆ",
+      "addPost": "پۆست زیادبکە",
+      "messages": "نامەکان",
+      "setting": "ڕێکبەندییەکان"
+    }
   },
   "shared": {
     "profile": "هەژمار",
@@ -19,6 +27,9 @@
     "username": "ناو",
     "email": "ئیمەیل",
     "password": "وشەی نهێنی"
+  },
+  "login": {
+    "haveAccount": "هەژمارت نییە؟"
   },
   "languages": {
     "languages": "زمانەکان",

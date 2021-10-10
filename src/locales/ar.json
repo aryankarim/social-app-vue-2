@@ -7,9 +7,17 @@
   },
   "home": {
     "addPost": "إضافة مشاركات",
-    "writePost": "اكتب ما يدور في ذهنك ...",
+    "writePost": "...اكتب ما يدور في ذهنك",
     "publishPost": "نشر مشاركة",
-    "todayPosts": "مشاركات اليوم"
+    "todayPosts": "مشاركات اليوم",
+    "refresh": "تحديث",
+    "underDevelopment": "!هذه الصفحة هي قيد التطوير! سيتم إضافة المحتوى قريبا",
+    "tabs": {
+      "feed": "مشاركات",
+      "addPost": "إضافة مشاركات",
+      "messages": "رسائل",
+      "setting": "الإعداد"
+    }
   },
   "shared": {
     "profile": "الملف الشخصي",
@@ -20,6 +28,10 @@
     "email": "البريد الإلكتروني",
     "password": "كلمة المرور"
   },
+  "login": {
+    "haveAccount": "ليس لديك حساب؟"
+  },
+
   "languages": {
     "languages": "اللغات",
     "english": "إنجليزي",

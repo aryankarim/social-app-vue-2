@@ -4,9 +4,15 @@
       <v-container>
         <v-sheet rounded="lg">
           <v-list color="transparent">
-            <v-list-item v-for="sideBarItem in sideBar" :key="sideBarItem" link>
-              <v-list-item-content @click="changeTab(sideBarItem)">
-                <v-list-item-title> {{ sideBarItem }} </v-list-item-title>
+            <v-list-item
+              v-for="(sideBarItem, itemName) in $t('home.tabs')"
+              :key="sideBarItem"
+              link
+            >
+              <v-list-item-content @click="changeTab(itemName)">
+                <v-list-item-title>
+                  {{ sideBarItem }}
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
             <div v-if="tab === 'Feed'">
@@ -19,7 +25,7 @@
               >
                 <v-list-item-content>
                   <v-list-item-title>
-                    Refresh
+                    {{ $t('home.refresh') }}
                     <v-icon class="mb-1">mdi-refresh</v-icon>
                   </v-list-item-title>
                 </v-list-item-content>
@@ -33,14 +39,11 @@
     <v-flex xs12 sm9 md10 lg10 xl10>
       <v-container>
         <v-sheet min-height="70vh" rounded="lg">
-          <PostList v-if="tab === 'Feed'" />
-          <AddPost
-            v-else-if="tab === 'Add Post'"
-            @refreshPosts="refreshPosts"
-          />
+          <PostList v-if="tab === 'feed'" />
+          <AddPost v-else-if="tab === 'addPost'" @refreshPosts="refreshPosts" />
           <div v-else class="pa-16">
             <v-alert text outlined color="deep-orange" icon="mdi-fire">
-              This page is under development! Content will be added soon!
+              {{ $t('home.underDevelopment') }}
             </v-alert>
           </div>
         </v-sheet>
@@ -62,8 +65,7 @@ export default {
   },
   data() {
     return {
-      sideBar: ['Feed', 'Add Post', 'Messeges', 'Setting'],
-      tab: 'Feed',
+      tab: 'feed',
     };
   },
   methods: {
@@ -71,7 +73,7 @@ export default {
     refreshPosts() {
       this.fetchPosts();
     },
-    changeTab(newTab = 'Feed') {
+    changeTab(newTab) {
       this.tab = newTab;
     },
   },
