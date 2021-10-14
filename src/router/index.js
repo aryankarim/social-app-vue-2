@@ -13,13 +13,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    beforeEnter: (to, from, next) => {
-      if (store.getters.user.loggedIn) {
-        next();
-      } else {
-        next('/login');
-      }
-    },
   },
   {
     path: '/login',
